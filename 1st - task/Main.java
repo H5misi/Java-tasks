@@ -25,13 +25,16 @@ public class Main
 
         int max, min, input;
 
+        // initialize max & min with first value in <str>(line 21)
         max = min = lineScanner.nextInt();
 
+        // loop if the next input is Integer
         while (lineScanner.hasNextInt())
         {
-
+            // assign <input> with next Integer value in the line
             input = lineScanner.nextInt();
 
+            // check if the current value is greater than max or smaller than min & assign it
             if (max <= input)
             {
                 max = input;
@@ -110,9 +113,11 @@ public class Main
         int isEqual = 0;
 
 //        str = str.replaceAll("\\s", "");
-
+        // iterate over the whole string to check the value of integers and if they equal (increase isEqual) or not
         for (int i = 0; i < str.length() - 1; i++)
         {
+            // Character.getNumericValue(str.charAt(i)) -> ↩
+            // to convert a character in the string to integer and use it
             if (Character.getNumericValue(str.charAt(i)) != ' ')
             {
                 if (Character.getNumericValue(str.charAt(i)) == Character.getNumericValue(str.charAt(i + 1)))
@@ -122,7 +127,7 @@ public class Main
             }
 
         }
-
+        // check if isEqual == str.length -> if equal, then all numbers are equal
         if (isEqual == str.length() - 1)
         {
             return "Special case";
